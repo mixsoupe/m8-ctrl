@@ -1,4 +1,3 @@
-from digitalio import Direction, Pull
 from adafruit_mcp230xx.mcp23017 import MCP23017
 
 # Initialize the MCP23017 chip on the bonnet
