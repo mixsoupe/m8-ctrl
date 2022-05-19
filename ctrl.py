@@ -1,13 +1,8 @@
-import board
-import busio
 from digitalio import Direction, Pull
 from adafruit_mcp230xx.mcp23017 import MCP23017
 
-# Initialize the I2C bus:
-i2c = busio.I2C(board.SCL, board.SDA)
-
 # Initialize the MCP23017 chip on the bonnet
-mcp = MCP23017(i2c)
+mcp = MCP23017(busnum = 1, address = 0x20, num_gpios = 16)
 
 # Optionally change the address of the device if you set any of the A0, A1, A2
 # pins.  Specify the new address with a keyword parameter:
