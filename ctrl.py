@@ -1,36 +1,29 @@
-##
- # Maker's Digest
- #
- # MCP23017 GPIO Expander Example
- #
- # Dont forget to install the libraries! See README.md for details.
-##
-from time import sleep          # Import sleep from time
-import Adafruit_GPIO.MCP230xx as MCP230XX # Import Adafruit MCP23017 Library
+import board
+from digitalio import DigitalInOut, Direction, Pull
+from adafruit_mcp230xx.mcp23017 import MCP23017
 
-mcp = MCP230XX.MCP23017()       # Instantiate mcp object
-dly = .25                       # Set delay of 1/4 second
+MCP23017_I2C_ADDRESS = 0x20
 
-# Setup Outputs. 
-# We loop through all 16 GPIO to set them as GPIO.OUT, which
-# needs to be referenced as MCP230XX.GPIO.OUT.
-#
-# If you are only using one or two of the GPIO pins on the 
-# mcp23017, you can set them up for outputs individually as:
-# mcp.setup(0, MCP230XX.GPIO.OUT)
-# OR
-# mcp.setup(0, MCP230XX.GPIO.IN)
-#
-# See Adafruit_Python_GPIO on github for more details on 
-# using this library.
-for x in range(0, 16):
-    mcp.setup(x, MCP230XX.GPIO.IN)
+leds = []
+switches = []
 
-# Main Program
-# Loop through all 16 GPIO to set high, then low.
-def main():
-    for x in range(0, 16):
-        print "Flashing GPIO %d " % x
+mcp23017 = MCP23017(board.I2C(), address=MCP23017_I2C_ADDRESS)
 
-if __name__ == "__main__":
-    main();
+def configure_pins():
+    for pin in range(5, 7):
+        switches.append(mcp23017.get_pin(pin))
+    for switch in switches:
+        switch.direction = Direction.INPUT
+        switch.pull = Pull.UP
+        switch.invert_polarity = True
+
+def read_and_write_pin():
+    for pin, switch in enumerate(switches):
+        if switch.value:
+            print ("Button " + pin)
+
+# Main
+configure_pins()
+
+while True:
+    read_and_write_pin()
