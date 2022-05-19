@@ -1,20 +1,36 @@
-from adafruit_mcp230xx.mcp23017 import MCP23017
+##
+ # Maker's Digest
+ #
+ # MCP23017 GPIO Expander Example
+ #
+ # Dont forget to install the libraries! See README.md for details.
+##
+from time import sleep          # Import sleep from time
+import Adafruit_GPIO.MCP230xx as MCP230XX # Import Adafruit MCP23017 Library
 
-# Initialize the MCP23017 chip on the bonnet
-mcp = MCP23017(busnum = 1, address = 0x20, num_gpios = 16)
+mcp = MCP230XX.MCP23017()       # Instantiate mcp object
+dly = .25                       # Set delay of 1/4 second
 
-# Optionally change the address of the device if you set any of the A0, A1, A2
-# pins.  Specify the new address with a keyword parameter:
-# mcp = MCP23017(i2c, address=0x21)  # MCP23017 w/ A0 set
+# Setup Outputs. 
+# We loop through all 16 GPIO to set them as GPIO.OUT, which
+# needs to be referenced as MCP230XX.GPIO.OUT.
+#
+# If you are only using one or two of the GPIO pins on the 
+# mcp23017, you can set them up for outputs individually as:
+# mcp.setup(0, MCP230XX.GPIO.OUT)
+# OR
+# mcp.setup(0, MCP230XX.GPIO.IN)
+#
+# See Adafruit_Python_GPIO on github for more details on 
+# using this library.
+for x in range(0, 16):
+    mcp.setup(x, MCP230XX.GPIO.IN)
 
-# Make a list of all the port B pins (a.k.a 8-15)
-port_pins = []
-for pin in range(5, 7):    
-    mcp.config(pin, INPUT)
-    port_pins.append(mcp.get_pin(pin))
+# Main Program
+# Loop through all 16 GPIO to set high, then low.
+def main():
+    for x in range(0, 16):
+        print "Flashing GPIO %d " % x
 
-
-while True:
-    for num, button in enumerate(port_pins):
-        if not button.value:
-            print("Button #", num, "pressed!")
+if __name__ == "__main__":
+    main();
