@@ -10,14 +10,9 @@ mcp = MCP23017(busnum = 1, address = 0x20, num_gpios = 16)
 
 # Make a list of all the port B pins (a.k.a 8-15)
 port_pins = []
-for pin in range(5, 7):
+for pin in range(5, 7):    
+    mcp.config(pin, INPUT)
     port_pins.append(mcp.get_pin(pin))
-
-
-# Set all the port B pins to input, with pullups!
-for pin in port_pins:
-    pin.direction = Direction.INPUT
-    pin.pull = Pull.UP
 
 
 while True:
