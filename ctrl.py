@@ -1,7 +1,11 @@
 #!/usr/bin/python
 # -*- encoding: utf8 -*-
 import time
-#import adafruit_mcp230xx
+
+import board
+import busio
+import digitalio
+
 from adafruit_mcp230xx.mcp23016 import MCP23016
 
 
