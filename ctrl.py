@@ -10,5 +10,5 @@ mcp.config(7, mcp.INPUT)
 #mcp.pullup(3, 1)
 
 while (True):
-    print (mcp.input(5))
+    #print (mcp.input(5))
     time.sleep(1)
