@@ -1,29 +1,16 @@
-import board
-from digitalio import DigitalInOut, Direction, Pull
-from adafruit_mcp230xx.mcp23017 import MCP23017
+#!/usr/bin/python
+# -*- encoding: utf8 -*-
+from Adafruit_MCP230xx import *
 
-MCP23017_I2C_ADDRESS = 0x20
+mcp = Adafruit_MCP230XX(address = 0x20, num_gpios = 16) # MCP23017
 
-leds = []
-switches = []
+mcp.config(5, mcp.INPUT)
+mcp.config(6, mcp.INPUT)
+mcp.config(7, mcp.INPUT)
+#mcp.pullup(3, 1)
 
-mcp23017 = MCP23017(board.I2C(), address=MCP23017_I2C_ADDRESS)
-
-def configure_pins():
-    for pin in range(5, 7):
-        switches.append(mcp23017.get_pin(pin))
-    for switch in switches:
-        switch.direction = Direction.INPUT
-        switch.pull = Pull.UP
-        switch.invert_polarity = True
-
-def read_and_write_pin():
-    for pin, switch in enumerate(switches):
-        if switch.value:
-            print ("Button " + pin)
-
-# Main
-configure_pins()
-
-while True:
-    read_and_write_pin()
+while (True):
+    print "Pin 5 = %d" % (mcp.input(5) >> 5)
+    print "Pin 6 = %d" % (mcp.input(6) >> 6)
+    print "Pin 7 = %d" % (mcp.input(7) >> 7)
+    time.sleep(1)
