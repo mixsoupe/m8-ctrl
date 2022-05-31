@@ -6,9 +6,11 @@ import board
 import busio
 import digitalio
 
+from adafruit_extended_bus import ExtendedI2C as I2C
+
 from adafruit_mcp230xx.mcp23016 import MCP23016
 
-i2c = busio.I2C(board.SCL, board.SDA)
+i2c = I2C(11)
 
 mcp = MCP23016(i2c)
 
