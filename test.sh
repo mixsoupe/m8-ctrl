@@ -1,4 +1,4 @@
 #!/bin/bash
 
 git pull
-python ctrl.py
+python3 ctrl.py
