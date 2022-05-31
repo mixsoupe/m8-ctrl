@@ -13,15 +13,21 @@ from adafruit_mcp230xx.mcp23016 import MCP23016
 i2c = I2C(11)
 
 mcp = MCP23016(i2c)
-#pin7 = mcp.get_pin(7)
-pin0 = mcp.get_pin(8)
-pin0.switch_to_output(value=True)
-#pin7.direction = digitalio.Direction.INPUT
+
+port_a_pins = []
+for pin in range(0, 16):
+    port_a_pins.append(mcp.get_pin(pin))
+
+# Set all the port A pins to output
+for pin in port_a_pins:
+    pin.direction = Direction.OUTPUT
+    
+    
 
 while (True):
 
     #print (pin4.value)
-    pin0.value = False
+    port_a_pins[num].value = True  # turn LED on!
     
     time.sleep(1)
-    pin0.value = True
+    port_a_pins[num].value = False  # turn LED off
