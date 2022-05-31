@@ -28,8 +28,9 @@ pin7.direction = digitalio.Direction.INPUT
 #pin7.pull = digitalio.Pull.UP
 
 while (True):
-    print("Pin 5 is at a high level: {0}".format(pin5.value))
-    print("Pin 6 is at a high level: {0}".format(pin6.value))
-    print("Pin 7 is at a high level: {0}".format(pin7.value))
+    #print("Pin 5 is at a high level: {0}".format(pin5.value))
+    #print("Pin 6 is at a high level: {0}".format(pin6.value))
+    #print("Pin 7 is at a high level: {0}".format(pin7.value))
+    print (pin7.value)
     
     time.sleep(1)
