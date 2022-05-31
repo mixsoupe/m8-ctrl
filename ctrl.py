@@ -24,3 +24,4 @@ while (True):
     pin0.value = False
     
     time.sleep(1)
+    pin0.value = True
