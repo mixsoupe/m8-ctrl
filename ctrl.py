@@ -8,7 +8,7 @@ import digitalio
 
 from adafruit_mcp230xx.mcp23016 import MCP23016
 
-i2c = busio.I2C(11, 10)
+#i2c = busio.I2C(11, 10)
 
 mcp = MCP23016(0x20)
 
