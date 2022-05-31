@@ -19,7 +19,7 @@ pin6 = mcp.get_pin(6)
 pin7 = mcp.get_pin(7)
 
 pin5.direction = digitalio.Direction.INPUT
-pin5.pull = digitalio.Pull.UP
+#pin5.pull = digitalio.Pull.UP
 
 pin6.direction = digitalio.Direction.INPUT
 #pin6.pull = digitalio.Pull.UP
