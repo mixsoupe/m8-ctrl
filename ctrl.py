@@ -4,7 +4,7 @@ import time
 
 import board
 import busio
-import digitalio
+from digitalio import Direction, Pull
 
 from adafruit_extended_bus import ExtendedI2C as I2C
 
