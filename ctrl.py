@@ -14,12 +14,22 @@ i2c = I2C(11)
 
 mcp = MCP23016(i2c)
 
-mcp.config(5, mcp.INPUT)
-mcp.config(6, mcp.INPUT)
-mcp.config(7, mcp.INPUT)
-mcp.pullup(3, 1)
+pin5 = mcp.get_pin(5)
+pin6 = mcp.get_pin(6)
+pin7 = mcp.get_pin(7)
+
+pin5.direction = digitalio.Direction.INPUT
+pin5.pull = digitalio.Pull.UP
+
+pin6.direction = digitalio.Direction.INPUT
+pin6.pull = digitalio.Pull.UP
+
+pin7.direction = digitalio.Direction.INPUT
+pin7.pull = digitalio.Pull.UP
 
 while (True):
-    print (mcp.input(5))
-    #print ("test")
+    print("Pin 5 is at a high level: {0}".format(pin5.value))
+    print("Pin 6 is at a high level: {0}".format(pin6.value))
+    print("Pin 7 is at a high level: {0}".format(pin7.value))
+    
     time.sleep(1)
