@@ -20,7 +20,7 @@ pin4.switch_to_output(value=True)
 
 while (True):
 
-    print (pin7.value)
-    pin4.value = True
+    print (pin4.value)
+    #pin4.value
     
     time.sleep(1)
