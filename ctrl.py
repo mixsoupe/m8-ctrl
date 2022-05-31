@@ -27,7 +27,7 @@ for pin in port_a_pins:
 while (True):
     for num, led in enumerate(port_a_pins):
         #print (pin4.value)
-        port_a_pins[num].value = True  # turn LED on!
+        port_a_pins[num].value = False  # turn LED on!
 
         time.sleep(1)
         port_a_pins[num].value = False  # turn LED off
