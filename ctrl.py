@@ -1,7 +1,8 @@
 #!/usr/bin/python
 # -*- encoding: utf8 -*-
 import time
-from Adafruit_MCP230xx import *
+import adafruit_mcp230xx
+#from Adafruit_MCP230xx import *
 
 
 #mcp = Adafruit_MCP230XX(address = 0x20, num_gpios = 16) # MCP23017
