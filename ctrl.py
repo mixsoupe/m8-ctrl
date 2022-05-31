@@ -19,13 +19,13 @@ pin6 = mcp.get_pin(6)
 pin7 = mcp.get_pin(7)
 
 pin5.direction = digitalio.Direction.INPUT
-pin5.pull = digitalio.Pull.UP
+#pin5.pull = digitalio.Pull.UP
 
 pin6.direction = digitalio.Direction.INPUT
-pin6.pull = digitalio.Pull.UP
+#pin6.pull = digitalio.Pull.UP
 
 pin7.direction = digitalio.Direction.INPUT
-pin7.pull = digitalio.Pull.UP
+#pin7.pull = digitalio.Pull.UP
 
 while (True):
     print("Pin 5 is at a high level: {0}".format(pin5.value))
