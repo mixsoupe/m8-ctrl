@@ -16,7 +16,7 @@ mcp = MCP23016(i2c)
 
 pin5 = mcp.get_pin(5)
 pin6 = mcp.get_pin(6)
-pin7 = mcp.get_pin(7)
+pin7 = mcp.get_pin(28)
 
 pin5.direction = digitalio.Direction.INPUT
 #pin5.pull = digitalio.Pull.UP
