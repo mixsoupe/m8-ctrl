@@ -22,7 +22,7 @@ for pin in range(0, 16):
 for pin in port_a_pins:
     pin.direction = Direction.OUTPUT
     
-    
+""" 
 
 while (True):
     for num, led in enumerate(port_a_pins):
@@ -31,3 +31,4 @@ while (True):
 
         time.sleep(1)
         port_a_pins[num].value = False  # turn LED off
+"""
