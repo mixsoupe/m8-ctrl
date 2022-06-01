@@ -26,7 +26,7 @@ pin0.direction = Direction.OUTPUT
 
 pin7 = mcp.get_pin(7)
 pin7.direction = Direction.INPUT
-pin7.pull = Pull.PULLUP
+pin7.pull = Pull.UP
     
 while (True):
     print (pin7.value)
