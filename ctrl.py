@@ -26,6 +26,7 @@ while (True):
         #print ("key 1")
         time.sleep(1)
         with uinput.Device([uinput.KEY_E,]) as device:
+            print ("key pressed")
             device.emit_click(uinput.KEY_E)
     
     #time.sleep(.5)
