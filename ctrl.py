@@ -21,7 +21,7 @@ pins = []
 # Set all the port A pins to output
 #for pin in pins:
     #pin.direction = Direction.OUTPUT
-pin7 = mcp.get_pin(1)
+pin7 = mcp.get_pin(0)
 pin7.direction = Direction.OUTPUT
     
 while (True):
