@@ -23,10 +23,10 @@ for pin in pins:
     pin.direction = Direction.OUTPUT
 
 while (True):
-    pins[0].value = True
+    pins[7].value = True
     print("True")
     time.sleep(1)
-    pins[0].value = False
+    pins[7].value = False
     print("False")
     time.sleep(0.5)
 
