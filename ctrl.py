@@ -17,6 +17,7 @@ mcp = MCP23017(i2c)
 pin7 = mcp.get_pin(7)
 pin7.direction = Direction.INPUT
 pin7.pull = Pull.UP
+pin7_status = (
   
 while (True):
     if not pin7.value:
