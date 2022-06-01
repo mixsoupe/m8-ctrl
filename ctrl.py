@@ -2,6 +2,8 @@
 # -*- encoding: utf8 -*-
 import time
 
+import uinput
+
 import board
 import busio
 from digitalio import Direction, Pull
@@ -21,7 +23,10 @@ pin7.pull = Pull.UP
 
 while (True):
     if not pin7.value:
-        print ("key 1")
+        #print ("key 1")
+        time.sleep(1)
+        with uinput.Device([uinput.KEY_SPACE,]) as device:
+            device.emit_click(uinput.KEY_SPACE)
     
     #time.sleep(.5)
 
