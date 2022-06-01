@@ -17,12 +17,14 @@ mcp = MCP23017(i2c)
 pin7 = mcp.get_pin(7)
 pin7.direction = Direction.INPUT
 pin7.pull = Pull.UP
-pin7_status = (
+
+pin7_state = False
   
 while (True):
-    if not pin7.value:
-        #print ("key 1")
-        #time.sleep(1)
+    pressed7 = pin7.value
+    if pressed7 != button_state:
         keyboard.press('A')
+    pin7_state = pressed7
+    
     
 
