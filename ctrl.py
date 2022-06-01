@@ -25,8 +25,8 @@ for pin in port_a_pins:
 
 
 while (True):
-    port_a_pins[7].value = False
+    port_a_pins[0].value = False
     time.sleep(1)
-    port_a_pins[7].value = True
+    port_a_pins[0].value = True
     time.sleep(1)
 
