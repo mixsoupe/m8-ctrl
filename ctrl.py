@@ -23,10 +23,12 @@ state = False
 while (True):
     pressed = not pin7.value
     if pressed and pressed != state:
+        #keyboard.press(Key.space)
         keyboard.press('A')
-        state = pressed
+        state = True
     if not pressed and pressed == state:
-        state = pressed
+        keyboard.release('A')
+        state = False
     
 
     
