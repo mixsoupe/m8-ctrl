@@ -24,8 +24,10 @@ for pin in pins:
 
 while (True):
     pins[0].value = True
+    print("True")
     time.sleep(1)
     pins[0].value = False
+    print("False")
     time.sleep(1)
 
 
