@@ -21,7 +21,7 @@ pin7.pull = Pull.UP
 while (True):
     if not pin7.value:
         #print ("key 1")
-        time.sleep(1)
+        #time.sleep(1)
         keyboard.press('A')
     
 
