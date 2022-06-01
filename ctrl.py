@@ -25,8 +25,8 @@ while (True):
     if not pin7.value:
         #print ("key 1")
         time.sleep(1)
-        with uinput.Device([uinput.KEY_SPACE,]) as device:
-            device.emit_click(uinput.KEY_SPACE)
+        with uinput.Device([uinput.KEY_E,]) as device:
+            device.emit_click(uinput.KEY_E)
     
     #time.sleep(.5)
 
