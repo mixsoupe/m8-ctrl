@@ -24,7 +24,7 @@ pins = []
 pin0 = mcp.get_pin(0)
 pin0.direction = Direction.OUTPUT
 
-pin7 = mcp.get_pin(7)
+pin7 = mcp.get_pin(8)
 pin7.direction = Direction.INPUT
     
 while (True):
