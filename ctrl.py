@@ -24,11 +24,11 @@ while (True):
     pressed = not pin7.value
     
     if pressed and state == False:
-        keyboard.press(Key.space)
+        keyboard.press(Key.a)
         state = True
         
     if not pressed and state == True:
-        keyboard.release(Key.space)
+        keyboard.release(Key.a)
         state = False
     
 
