@@ -28,6 +28,6 @@ while (True):
     time.sleep(1)
     pins[0].value = False
     print("False")
-    time.sleep(1)
+    time.sleep(0.5)
 
 
