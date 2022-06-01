@@ -14,20 +14,21 @@ i2c = I2C(11)
 
 mcp = MCP23016(i2c)
 
-port_a_pins = []
+pins = []
 for pin in range(0, 16):
-    port_a_pins.append(mcp.get_pin(pin))
+    pins.append(mcp.get_pin(pin))
 
 # Set all the port A pins to output
-for pin in port_a_pins:
+for pin in pins:
     pin.direction = Direction.OUTPUT
+    pin.pull = digitalio.Pull.UP
     
 
 
 while (True):
     print ("true")
-    port_a_pins[0].value = False
+    pins[0].value = False
     time.sleep(1)
-    port_a_pins[0].value = True
+    pins[0].value = True
     time.sleep(1)
 
