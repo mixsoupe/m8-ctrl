@@ -25,6 +25,7 @@ for pin in port_a_pins:
 
 
 while (True):
+    print ("true")
     port_a_pins[0].value = False
     time.sleep(1)
     port_a_pins[0].value = True
