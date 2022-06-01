@@ -22,7 +22,7 @@ pin7_state = False
   
 while (True):
     pressed7 = pin7.value
-    if pressed7 != button_state:
+    if pressed7 != pin7_state:
         keyboard.press('A')
     pin7_state = pressed7
     
