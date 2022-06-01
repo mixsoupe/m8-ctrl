@@ -25,6 +25,8 @@ while (True):
     if pressed and pressed != state:
         keyboard.press('A')
         state = pressed
+    if not pressed and pressed == state:
+        state = pressed
     
 
     
