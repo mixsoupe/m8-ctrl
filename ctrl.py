@@ -20,13 +20,11 @@ for pin in range(0, 16):
 
 # Set all the port A pins to output
 for pin in pins:
-    pin.direction = Direction.OUTPUT   
+    pin.direction = Direction.INPUT   
 
 
 while (True):
-    pins[0].value = True
-    time.sleep(1)
-    pins[0].value = False
+    print(pins[0].value)
     time.sleep(1)
 
 
