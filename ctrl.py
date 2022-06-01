@@ -18,11 +18,11 @@ pin7 = mcp.get_pin(7)
 pin7.direction = Direction.INPUT
 pin7.pull = Pull.UP
 
-pin7_down = False
+state = False
   
 while (True):
     pressed = not pin7.value
-    if pressed:
+    if pressed and pressed != state:
         keyboard.press('A')
 
     
