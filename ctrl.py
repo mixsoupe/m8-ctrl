@@ -24,6 +24,8 @@ while (True):
     pressed = not pin7.value
     if pressed and pressed != state:
         keyboard.press('A')
+        state = pressed
+    
 
     
     
