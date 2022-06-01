@@ -23,5 +23,5 @@ while (True):
     if not pin7.value:
         print ("key 1")
     
-    time.sleep(.5)
+    #time.sleep(.5)
 
