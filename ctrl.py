@@ -14,25 +14,14 @@ i2c = I2C(11)
 
 mcp = MCP23017(i2c)
 
-pins = []
-#for pin in range(0, 15):
-    #pins.append(mcp.get_pin(pin))
-
-# Set all the port A pins to output
-#for pin in pins:
-    #pin.direction = Direction.OUTPUT
-pin0 = mcp.get_pin(8)
-pin0.direction = Direction.OUTPUT
-
 pin7 = mcp.get_pin(7)
 pin7.direction = Direction.INPUT
 pin7.pull = Pull.UP
-    
+
+
 while (True):
-    print (pin7.value)
-    pin0.value = True
-    time.sleep(.5)
-    pin0.value = False
+    if not pin7.value:
+        print ("key 1")
     
     time.sleep(.5)
 
