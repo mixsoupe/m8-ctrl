@@ -25,12 +25,12 @@ pin7 = mcp.get_pin(0)
 pin7.direction = Direction.OUTPUT
     
 while (True):
-    pint7.value = True
+    pin7.value = True
     #pins[7].value = True
     #print("True")
     time.sleep(1)
     #pins[7].value = False
     #print("False")
     #time.sleep(0.5)
-    pint7.value = False
+    pin7.value = False
 
