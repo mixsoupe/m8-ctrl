@@ -20,14 +20,19 @@ pin7 = mcp.get_pin(7)
 pin7.direction = Direction.INPUT
 pin7.pull = Pull.UP
 
-
+events = (
+    uinput.KEY_E,
+    uinput.KEY_H,
+    uinput.KEY_L,
+    uinput.KEY_O,
+    )
+    
 while (True):
     if not pin7.value:
         #print ("key 1")
         time.sleep(1)
-        with uinput.Device([uinput.KEY_E,]) as device:
+        with uinput.Device(events) as device:
             print ("key pressed")
             device.emit_click(uinput.KEY_E)
     
-    #time.sleep(.5)
 
