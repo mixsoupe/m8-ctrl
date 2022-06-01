@@ -23,6 +23,9 @@ state = False
 while (True):
     pressed = not pin7.value
     
+    if pressed:
+        keyboard.press(Key.space)
+    """
     if pressed and state == False:
         keyboard.press(Key.space)
         state = True
@@ -30,6 +33,7 @@ while (True):
     if not pressed and state == True:
         keyboard.release(Key.space)
         state = False
+    """
     
 
     
