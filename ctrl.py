@@ -33,4 +33,6 @@ while (True):
     #print("False")
     #time.sleep(0.5)
     pin7.value = False
+    
+    time.sleep(1)
 
