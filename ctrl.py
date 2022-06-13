@@ -8,6 +8,8 @@ from digitalio import Direction, Pull
 from adafruit_extended_bus import ExtendedI2C as I2C
 from adafruit_mcp230xx.mcp23017 import MCP23017
 
+from subprocess import call
+
 keyboard = Controller()
 
 i2c = I2C(11)
@@ -103,10 +105,10 @@ while (True):
         keyboard.press('x')
         state7 = True
     if pressed8 and state8 == False:
-        keyboard.press('i')
+        call(["amixer", "-D", "pulse", "sset", "Master", "10%+"])
         state8 = True
     if pressed9 and state9 == False:
-        keyboard.press('j')
+        call(["amixer", "-D", "pulse", "sset", "Master", "10%-"])
         state9 = True
         
         
@@ -137,10 +139,8 @@ while (True):
         keyboard.release('x')
         state7 = False
     if not pressed8 and state8 == True:
-        keyboard.release('i')
         state8 = False
     if not pressed9 and state9 == True:
-        keyboard.release('j')
         state9 = False
     
 
