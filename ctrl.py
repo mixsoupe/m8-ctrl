@@ -105,10 +105,10 @@ while (True):
         keyboard.press('x')
         state7 = True
     if pressed8 and state8 == False:
-        call(["amixer", "-D", "pulse", "sset", "Master", "5%-"])
+        keyboard.press(Key.alt)
         state8 = True
     if pressed9 and state9 == False:
-        call(["amixer", "-D", "pulse", "sset", "Master", "5%+"])
+        keyboard.press(Key.enter)
         state9 = True
         
         
@@ -139,8 +139,10 @@ while (True):
         keyboard.release('x')
         state7 = False
     if not pressed8 and state8 == True:
+        keyboard.release(Key.alt)
         state8 = False
     if not pressed9 and state9 == True:
+        keyboard.release(Key.enter)
         state9 = False
     
 
