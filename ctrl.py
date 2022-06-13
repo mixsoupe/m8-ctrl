@@ -79,68 +79,68 @@ while (True):
     pressed9 = not pin9.value
     
     if pressed0 and state0 == False:
-        keyboard.press(Key.space)
+        keyboard.press('a')
         state0 = True
     if pressed1 and state1 == False:
-        keyboard.press(Key.space)
+        keyboard.press('b')
         state1 = True
     if pressed2 and state2 == False:
-        keyboard.press(Key.space)
+        keyboard.press('c')
         state2 = True
     if pressed3 and state3 == False:
-        keyboard.press(Key.space)
+        keyboard.press('d')
         state3 = True
     if pressed4 and state4 == False:
-        keyboard.press(Key.space)
+        keyboard.press('e')
         state4 = True
     if pressed5 and state5 == False:
-        keyboard.press(Key.space)
+        keyboard.press('f')
         state5 = True
     if pressed6 and state6 == False:
-        keyboard.press(Key.space)
+        keyboard.press('g')
         state6 = True
     if pressed7 and state7 == False:
-        keyboard.press(Key.space)
+        keyboard.press('h')
         state7 = True
     if pressed8 and state8 == False:
-        keyboard.press(Key.space)
+        keyboard.press('i')
         state8 = True
     if pressed9 and state9 == False:
-        keyboard.press(Key.space)
+        keyboard.press('j')
         state9 = True
         
         
         
         
     if not pressed0 and state0 == True:
-        keyboard.release(Key.space)
+        keyboard.press('a')
         state0 = False
     if not pressed1 and state1 == True:
-        keyboard.release(Key.space)
+        keyboard.press('b')
         state1 = False
     if not pressed2 and state2 == True:
-        keyboard.release(Key.space)
+        keyboard.press('c')
         state2 = False
     if not pressed3 and state3 == True:
-        keyboard.release(Key.space)
+        keyboard.press('d')
         state3 = False
     if not pressed4 and state4 == True:
-        keyboard.release(Key.space)
+        keyboard.press('e')
         state4 = False
     if not pressed5 and state5 == True:
-        keyboard.release(Key.space)
+        keyboard.press('f')
         state5 = False
     if not pressed6 and state6 == True:
-        keyboard.release(Key.space)
+        keyboard.press('g')
         state6 = False
     if not pressed7 and state7 == True:
-        keyboard.release(Key.space)
+        keyboard.press('h')
         state7 = False
     if not pressed8 and state8 == True:
-        keyboard.release(Key.space)
+        keyboard.press('i')
         state8 = False
     if not pressed9 and state9 == True:
-        keyboard.release(Key.space)
+        keyboard.press('j')
         state9 = False
     
 
