@@ -101,7 +101,7 @@ while (True):
         state6 = True
     if pressed7 and state7 == False:
         keyboard.press(Key.space)
-        state8 = True
+        state7 = True
     if pressed8 and state8 == False:
         keyboard.press(Key.space)
         state8 = True
