@@ -79,34 +79,34 @@ while (True):
     pressed9 = not pin9.value
     
     if pressed0 and state0 == False:
-        keyboard.release('a')
+        keyboard.press('a')
         state0 = True
     if pressed1 and state1 == False:
-        keyboard.release('s')
+        keyboard.press('s')
         state1 = True
     if pressed2 and state2 == False:
-        keyboard.release(Key.right)
+        keyboard.press(Key.right)
         state2 = True
     if pressed3 and state3 == False:
-        keyboard.release(Key.down)
+        keyboard.press(Key.down)
         state3 = True
     if pressed4 and state4 == False:
-        keyboard.release(Key.left)
+        keyboard.press(Key.left)
         state4 = True
     if pressed5 and state5 == False:
-        keyboard.release(Key.up)
+        keyboard.press(Key.up)
         state5 = True
     if pressed6 and state6 == False:
-        keyboard.release('z')
+        keyboard.press('z')
         state6 = True
     if pressed7 and state7 == False:
-        keyboard.release('x')
+        keyboard.press('x')
         state7 = True
     if pressed8 and state8 == False:
-        keyboard.release('i')
+        keyboard.press('i')
         state8 = True
     if pressed9 and state9 == False:
-        keyboard.release('j')
+        keyboard.press('j')
         state9 = True
         
         
