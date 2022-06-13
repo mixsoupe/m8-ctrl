@@ -105,10 +105,10 @@ while (True):
         keyboard.press('x')
         state7 = True
     if pressed8 and state8 == False:
-        call(["amixer", "-D", "pulse", "sset", "Master", "10%+"])
+        call(["amixer", "-D", "pulse", "sset", "Master", "5%-"])
         state8 = True
     if pressed9 and state9 == False:
-        call(["amixer", "-D", "pulse", "sset", "Master", "10%-"])
+        call(["amixer", "-D", "pulse", "sset", "Master", "5%+"])
         state9 = True
         
         
