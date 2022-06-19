@@ -113,6 +113,13 @@ while (True):
         keyboard.press(Key.media_volume_up)
         state9 = True
         
+    if pressed8 and pressed9:
+        keyboard.press(Key.alt)
+        keyboard.press(Key.enter)
+        keyboard.release(Key.alt)
+        keyboard.release(Key.enter)
+        
+        
         
         
         
