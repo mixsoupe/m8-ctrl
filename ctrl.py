@@ -10,6 +10,8 @@ from adafruit_mcp230xx.mcp23017 import MCP23017
 
 from subprocess import call
 
+
+#KEYBOARD
 keyboard = Controller()
 
 i2c = I2C(11)
@@ -105,10 +107,10 @@ while (True):
         keyboard.press('x')
         state7 = True
     if pressed8 and state8 == False:
-        keyboard.press(Key.alt)
+        keyboard.press(Key.media_volume_down)
         state8 = True
     if pressed9 and state9 == False:
-        keyboard.press(Key.enter)
+        keyboard.press(Key.media_volume_up)
         state9 = True
         
         
@@ -139,10 +141,10 @@ while (True):
         keyboard.release('x')
         state7 = False
     if not pressed8 and state8 == True:
-        keyboard.release(Key.alt)
+        keyboard.release(Key.media_volume_down)
         state8 = False
     if not pressed9 and state9 == True:
-        keyboard.release(Key.enter)
+        keyboard.release(Key.media_volume_up)
         state9 = False
     
 
