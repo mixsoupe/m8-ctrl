@@ -69,6 +69,7 @@ state6 = False
 state7 = False
 state8 = False
 state9 = False
+state89 = False
   
 while (True):
     pressed0 = not pin0.value
@@ -113,11 +114,15 @@ while (True):
         keyboard.press(Key.media_volume_up)
         state9 = True
         
-    if pressed8 and pressed9:
+    if pressed8 and pressed9 and state89 == False:
         keyboard.press(Key.alt)
         keyboard.press(Key.enter)
         keyboard.release(Key.alt)
         keyboard.release(Key.enter)
+        state89 == True
+        time.sleep(0.5)
+        state89 == False
+        
         
         
         
