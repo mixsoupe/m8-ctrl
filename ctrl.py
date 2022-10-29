@@ -11,7 +11,7 @@ from adafruit_mcp230xx.mcp23017 import MCP23017
 from subprocess import call
 
 #LAUNCH M8C
-rc = call("sh /home/pi/code/m8-ctrl/launch-m8.sh")
+rc = call(['sh', '/home/pi/code/m8-ctrl/launch-m8.sh'])
 
 #KEYBOARD
 keyboard = Controller()
