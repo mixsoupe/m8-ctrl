@@ -8,10 +8,10 @@ from digitalio import Direction, Pull
 from adafruit_extended_bus import ExtendedI2C as I2C
 from adafruit_mcp230xx.mcp23017 import MCP23017
 
-from subprocess import call
+import subprocess
 
 #LAUNCH M8C
-rc = call(['sh', '/home/pi/code/m8-ctrl/launch-m8.sh'])
+m8_process = subprocess.Popen(['sh', '/home/pi/code/m8-ctrl/launch-m8.sh'])
 
 #KEYBOARD
 keyboard = Controller()
