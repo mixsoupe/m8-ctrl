@@ -6,7 +6,7 @@ import board
 import busio
 from digitalio import Direction, Pull
 from adafruit_extended_bus import ExtendedI2C as I2C
-from adafruit_mcp230xx.mcp23017 import MCP23017
+from adafruit_mcp230xx.mcp23008 import MCP23008
 
 import subprocess
 
@@ -18,7 +18,7 @@ keyboard = Controller()
 
 i2c = I2C(11)
 
-mcp = MCP23017(i2c)
+mcp = MCP23008(i2c)
 
 pin0 = mcp.get_pin(0)
 pin0.direction = Direction.INPUT
