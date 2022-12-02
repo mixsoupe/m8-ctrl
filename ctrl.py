@@ -12,8 +12,8 @@ from gpiozero import Button
 import subprocess
 
 #GPIOZERO BUTTONS
-button1 = Button(19, bounce_time=0.1)
-button2 = Button(26, bounce_time=0.1)
+button1 = Button(26, bounce_time=0.1)
+button2 = Button(19, bounce_time=0.1)
 
 def volup():
     keyboard.press(Key.media_volume_up)
