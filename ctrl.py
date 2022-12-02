@@ -52,13 +52,13 @@ pin7 = mcp.get_pin(7)
 pin7.direction = Direction.INPUT
 pin7.pull = Pull.UP
 
-pin8 = mcp.get_pin(8)
-pin8.direction = Direction.INPUT
-pin8.pull = Pull.UP
+#pin8 = mcp.get_pin(8)
+#pin8.direction = Direction.INPUT
+#pin8.pull = Pull.UP
 
-pin9 = mcp.get_pin(9)
-pin9.direction = Direction.INPUT
-pin9.pull = Pull.UP
+#pin9 = mcp.get_pin(9)
+#pin9.direction = Direction.INPUT
+#pin9.pull = Pull.UP
 
 
 state0 = False
@@ -82,8 +82,8 @@ while (True):
     pressed5 = not pin5.value
     pressed6 = not pin6.value
     pressed7 = not pin7.value
-    pressed8 = not pin8.value
-    pressed9 = not pin9.value
+    #pressed8 = not pin8.value
+    #pressed9 = not pin9.value
     
     if pressed0 and state0 == False:
         keyboard.press('a')
@@ -109,20 +109,20 @@ while (True):
     if pressed7 and state7 == False:
         keyboard.press('x')
         state7 = True
-    if pressed8 and state8 == False:
-        keyboard.press(Key.media_volume_down)
-        state8 = True
-    if pressed9 and state9 == False:
-        keyboard.press(Key.media_volume_up)
-        state9 = True
+    #if pressed8 and state8 == False:
+        #keyboard.press(Key.media_volume_down)
+        #state8 = True
+    #if pressed9 and state9 == False:
+        #keyboard.press(Key.media_volume_up)
+        #state9 = True
         
-    if pressed8 and pressed9 and state89 == False:
-        keyboard.press(Key.alt)
-        keyboard.press(Key.enter)
-        keyboard.release(Key.alt)
-        keyboard.release(Key.enter)
-        state89 == True
-        time.sleep(0.5)
+    #if pressed8 and pressed9 and state89 == False:
+        #keyboard.press(Key.alt)
+        #keyboard.press(Key.enter)
+        ##keyboard.release(Key.alt)
+        #keyboard.release(Key.enter)
+        #state89 == True
+        ##time.sleep(0.5)
         state89 == False
         
         
@@ -154,12 +154,12 @@ while (True):
     if not pressed7 and state7 == True:
         keyboard.release('x')
         state7 = False
-    if not pressed8 and state8 == True:
-        keyboard.release(Key.media_volume_down)
-        state8 = False
-    if not pressed9 and state9 == True:
-        keyboard.release(Key.media_volume_up)
-        state9 = False
+    #if not pressed8 and state8 == True:
+        ##keyboard.release(Key.media_volume_down)
+        #state8 = False
+    #if not pressed9 and state9 == True:
+        #keyboard.release(Key.media_volume_up)
+        #state9 = False
     
 
     
