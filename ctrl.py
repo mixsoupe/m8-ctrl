@@ -17,9 +17,11 @@ button2 = Button(19, bounce_time=0.2)
 
 def volup():
     keyboard.press(Key.media_volume_up)
+    keyboard.release(Key.media_volume_up)
 
 def voldown():
     keyboard.press(Key.media_volume_down)
+    keyboard.release(Key.media_volume_down)
 
 def toggle():
     keyboard.press(Key.alt)
@@ -28,8 +30,8 @@ def toggle():
     keyboard.release(Key.enter)
     time.sleep(0.5)
     
-button1.when_released = volup
-button2.when_released = voldown
+button1.when_pressed = volup
+button2.when_pressed = voldown
   
 
 #LAUNCH M8C
