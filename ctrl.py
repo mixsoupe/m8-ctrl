@@ -7,8 +7,30 @@ import busio
 from digitalio import Direction, Pull
 from adafruit_extended_bus import ExtendedI2C as I2C
 from adafruit_mcp230xx.mcp23008 import MCP23008
+from gpiozero import Button
 
 import subprocess
+
+#GPIOZERO BUTTONS
+button1 = Button(19, bounce_time=0.1)
+button2 = Button(26, bounce_time=0.1)
+
+def volup():
+    keyboard.press(Key.media_volume_up)
+
+def voldown():
+    keyboard.press(Key.media_volume_down)
+
+def toggle():
+    keyboard.press(Key.alt)
+    keyboard.press(Key.enter)
+    keyboard.release(Key.alt)
+    keyboard.release(Key.enter)
+    time.sleep(0.5)
+    
+button1.when_pressed = volup
+button2.when_pressed = voldown
+  
 
 #LAUNCH M8C
 m8_process = subprocess.Popen(['sh', '/home/pi/code/m8-ctrl/launch-m8.sh'])
