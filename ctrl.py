@@ -86,28 +86,28 @@ while (True):
     #pressed9 = not pin9.value
     
     if pressed0 and state0 == False:
-        keyboard.press('a')
+        keyboard.press(Key.right)#droite
         state0 = True
     if pressed1 and state1 == False:
-        keyboard.press('s')
+        keyboard.press(Key.up)#haut
         state1 = True
     if pressed2 and state2 == False:
-        keyboard.press(Key.right)
+        keyboard.press('z')#z option
         state2 = True
     if pressed3 and state3 == False:
-        keyboard.press(Key.down)
+        keyboard.press('x')#x edit
         state3 = True
     if pressed4 and state4 == False:
-        keyboard.press(Key.left)
+        keyboard.press(Key.down)#bas
         state4 = True
     if pressed5 and state5 == False:
-        keyboard.press(Key.up)
+        keyboard.press(Key.left)#gauche
         state5 = True
     if pressed6 and state6 == False:
-        keyboard.press('z')
+        keyboard.press('s')#s start
         state6 = True
     if pressed7 and state7 == False:
-        keyboard.press('x')
+        keyboard.press('a')#a shift
         state7 = True
     #if pressed8 and state8 == False:
         #keyboard.press(Key.media_volume_down)
@@ -131,28 +131,28 @@ while (True):
         
         
     if not pressed0 and state0 == True:
-        keyboard.release('a')
+        keyboard.release(Key.right)
         state0 = False
     if not pressed1 and state1 == True:
-        keyboard.release('s')
+        keyboard.release(Key.up)
         state1 = False
     if not pressed2 and state2 == True:
-        keyboard.release(Key.right)
+        keyboard.release('z')
         state2 = False
     if not pressed3 and state3 == True:
-        keyboard.release(Key.down)
+        keyboard.release('x')
         state3 = False
     if not pressed4 and state4 == True:
-        keyboard.release(Key.left)
+        keyboard.release(Key.down)
         state4 = False
     if not pressed5 and state5 == True:
-        keyboard.release(Key.up)
+        keyboard.release(Key.left)
         state5 = False
     if not pressed6 and state6 == True:
-        keyboard.release('z')
+        keyboard.release('s')
         state6 = False
     if not pressed7 and state7 == True:
-        keyboard.release('x')
+        keyboard.release('a')
         state7 = False
     #if not pressed8 and state8 == True:
         ##keyboard.release(Key.media_volume_down)
