@@ -12,14 +12,16 @@ from gpiozero import Button
 import subprocess
 
 #GPIOZERO BUTTONS
-button1 = Button(26, bounce_time=0.1)
-button2 = Button(19, bounce_time=0.1)
+button1 = Button(26, bounce_time=0.2)
+button2 = Button(19, bounce_time=0.2)
 
 def volup():
     keyboard.press(Key.media_volume_up)
+    time.sleep(0.5)
 
 def voldown():
     keyboard.press(Key.media_volume_down)
+    time.sleep(0.5)
 
 def toggle():
     keyboard.press(Key.alt)
