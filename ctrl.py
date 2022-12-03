@@ -12,15 +12,17 @@ from gpiozero import Button
 import subprocess
 
 #GPIOZERO BUTTONS
-button1 = Button(26, bounce_time=0.1)
-button2 = Button(19, bounce_time=0.1)
+button1 = Button(26, bounce_time=0.2)
+button2 = Button(19, bounce_time=0.2)
 
 def volup():
     keyboard.press(Key.media_volume_up)
+    time.sleep(0.1)
     keyboard.release(Key.media_volume_up)
 
 def voldown():
     keyboard.press(Key.media_volume_down)
+    time.sleep(0.1)
     keyboard.release(Key.media_volume_down)
 
 def toggle():
@@ -133,8 +135,21 @@ while (True):
     if pressed7 and state7 == False:
         keyboard.press('a')#a shift
         state7 = True
-
-
+    #if pressed8 and state8 == False:
+        #keyboard.press(Key.media_volume_down)
+        #state8 = True
+    #if pressed9 and state9 == False:
+        #keyboard.press(Key.media_volume_up)
+        #state9 = True
+        
+    #if pressed8 and pressed9 and state89 == False:
+        #keyboard.press(Key.alt)
+        #keyboard.press(Key.enter)
+        ##keyboard.release(Key.alt)
+        #keyboard.release(Key.enter)
+        #state89 == True
+        ##time.sleep(0.5)
+        state89 == False
         
         
         
@@ -171,8 +186,3 @@ while (True):
     #if not pressed9 and state9 == True:
         #keyboard.release(Key.media_volume_up)
         #state9 = False
-    
-
-    
-    
-
