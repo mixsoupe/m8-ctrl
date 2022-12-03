@@ -30,8 +30,8 @@ def toggle():
     keyboard.release(Key.enter)
     time.sleep(0.5)
     
-#button1.when_pressed = volup
-#button2.when_pressed = voldown
+button1.when_pressed = volup
+button2.when_pressed = voldown
   
 
 #LAUNCH M8C
@@ -133,21 +133,7 @@ while (True):
     if pressed7 and state7 == False:
         keyboard.press('a')#a shift
         state7 = True
-    if button1.is_pressed:
-        keyboard.press(Key.media_volume_down)
-        keyboard.release(Key.media_volume_down)
-    if button2.is_pressed:
-        keyboard.press(Key.media_volume_up)
-        keyboard.release(Key.media_up_down)
-        #state9 = True
-        
-   if button1.is_pressed and button2.is_pressed:
-        keyboard.press(Key.alt)
-        keyboard.press(Key.enter)
-        keyboard.release(Key.alt)
-        keyboard.release(Key.enter)
-        #state89 == True
-        time.sleep(0.5)
+
 
         
         
