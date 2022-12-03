@@ -179,7 +179,7 @@ while (True):
     if not pressed7 and state7 == True:
         keyboard.release('a')
         state7 = False
-    if not pressed8 and state8 == True:
+    #if not pressed8 and state8 == True:
         ##keyboard.release(Key.media_volume_down)
         #state8 = False
     #if not pressed9 and state9 == True:
