@@ -12,8 +12,8 @@ from gpiozero import Button
 import subprocess
 
 #GPIOZERO BUTTONS
-button1 = Button(26, bounce_time=0.2)
-button2 = Button(19, bounce_time=0.2)
+button1 = Button(26, bounce_time=0.1)
+button2 = Button(19, bounce_time=0.1)
 
 def volup():
     keyboard.press(Key.media_volume_up)
@@ -30,8 +30,8 @@ def toggle():
     keyboard.release(Key.enter)
     time.sleep(0.5)
     
-button1.when_pressed = volup
-button2.when_pressed = voldown
+#button1.when_pressed = volup
+#button2.when_pressed = voldown
   
 
 #LAUNCH M8C
@@ -133,21 +133,22 @@ while (True):
     if pressed7 and state7 == False:
         keyboard.press('a')#a shift
         state7 = True
-    #if pressed8 and state8 == False:
-        #keyboard.press(Key.media_volume_down)
-        #state8 = True
-    #if pressed9 and state9 == False:
-        #keyboard.press(Key.media_volume_up)
+    if button1.is_pressed:
+        keyboard.press(Key.media_volume_down)
+        keyboard.release(Key.media_volume_down)
+    if button2.is_pressed:
+        keyboard.press(Key.media_volume_up)
+        keyboard.release(Key.media_up_down)
         #state9 = True
         
-    #if pressed8 and pressed9 and state89 == False:
-        #keyboard.press(Key.alt)
-        #keyboard.press(Key.enter)
-        ##keyboard.release(Key.alt)
-        #keyboard.release(Key.enter)
+   if button1.is_pressed and button2.is_pressed:
+        keyboard.press(Key.alt)
+        keyboard.press(Key.enter)
+        keyboard.release(Key.alt)
+        keyboard.release(Key.enter)
         #state89 == True
-        ##time.sleep(0.5)
-        state89 == False
+        time.sleep(0.5)
+
         
         
         
@@ -178,7 +179,7 @@ while (True):
     if not pressed7 and state7 == True:
         keyboard.release('a')
         state7 = False
-    #if not pressed8 and state8 == True:
+    if not pressed8 and state8 == True:
         ##keyboard.release(Key.media_volume_down)
         #state8 = False
     #if not pressed9 and state9 == True:
